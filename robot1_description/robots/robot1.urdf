@@ -1,18 +1,31 @@
 <?xml version="1.0"?>
-<robot name="test_robot">
-  <link name="link1" />
-  <link name="link2" />
-  <link name="link3" />
+<robot name="robot1_webcam">
+  <link name="world"/>
 
-
-  <joint name="joint1" type="continuous">
-    <parent link="link1"/>
-    <child link="link2"/>
+  <joint name="single_rrbot_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="servo_right_left"/>
   </joint>
 
-  <joint name="joint2" type="continuous">
-    <parent link="link1"/>
-    <child link="link3"/>
+
+  <link name="servo_right_left" />
+
+  <joint name="join1_base_to_head" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="servo_right_left"/>
   </joint>
+
+  <link name="servo_up_down" />
+
+  <joint name="join1_head_to_camera" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="servo_right_left"/>
+  </joint>
+
+  <link name="webcam1" />
+
 
 </robot>
