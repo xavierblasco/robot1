@@ -78,5 +78,22 @@
     </visual>	
   </link>
 
+  <joint name="webcam1_to_lense" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="webcam1"/>
+    <child link="lense"/>
+  </joint>
+
+  <link name="lense" >
+    <visual>
+      <geometry>
+         <cylinder length="0.005" radius="0.017"/>
+      </geometry>
+      <origin rpy="1.57 1.57 0" xyz="0.03 -0.028 0"/>
+      <material name="gray">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>	
+  </link>
 
 </robot>
